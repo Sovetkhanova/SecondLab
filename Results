@@ -1,0 +1,7 @@
+function = x^2
+[0, 1], N = 20
+
+First error: 0.02458331873019498
+Second error: 0.025416683598111556
+Third error: 4.1668164233410465E-4
+Fours error: 6.341666866714761
