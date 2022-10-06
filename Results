@@ -1,7 +1,14 @@
-function = x^2
-[0, 1], N = 20
+Function       ∫(-0.03x^3 + 0.26x - 0.26)dx        at interval [1, 2]      N = 10
 
-First error: 0.02458331873019498
-Second error: 0.025416683598111556
-Third error: 4.1668164233410465E-4
-Fours error: 6.341666866714761
+Exact solution = 0.0175
+Left rectangle's method = 0.014775000090226233
+Right rectangle's method = 0.019774999843388465
+Trapezoid's method = 0.017275000127479137
+Spline's method = 0.01727499987006158
+Simpson's method = 0.0175
+
+Error of left rectangle's method: 0.002724999909773769
+Error of right rectangle's method: 0.002274999843388463
+Error of trapezoid's method: 2.2499987252086462E-4
+Error of spline's method: 2.2500012993842064E-4
+Error of simpson's method: 0.0
