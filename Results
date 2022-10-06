@@ -9,6 +9,6 @@ Simpson's method =          0.0175
 
 Error of left rectangle's method: 	0.002724999909773769
 Error of right rectangle's method: 	0.002274999843388463
-Error of trapezoid's method: 		    2.2499987252086462E-4
-Error of spline's method: 			    2.2500012993842064E-4
-Error of simpson's method: 			    0.0
+Error of trapezoid's method: 		2.2499987252086462E-4
+Error of spline's method: 			2.2500012993842064E-4
+Error of simpson's method: 			0.0
