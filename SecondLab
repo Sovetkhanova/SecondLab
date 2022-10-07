@@ -39,8 +39,6 @@ public class SecondLab {
             sumSpline = sumSpline + integralSpline(i);
             sumSimpson = sumSimpson + integralSimpson(i);
         }
-        System.out.println(exact());
-        System.out.println(sumSimpson);
         System.out.println(
                 "Error of left rectangle's method: \t" + Math.abs(exact() - sumFirst) +
                         "\nError of right rectangle's method: \t" + Math.abs(exact() - sumSecond) +
