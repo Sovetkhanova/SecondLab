@@ -6,6 +6,9 @@ public class SecondLab {
     public static double setX_I(int i){
         return a + (i * del_x);
     }
+    public static double setX_I(double i){
+        return a + (i * del_x);
+    }
     public static double function(double x){
         return (-0.03 * Math.pow(x, 3)) + (0.26 * x) - 0.26;
     }
@@ -24,22 +27,25 @@ public class SecondLab {
     public static double integralSpline(int i){
         return function(setX_I(i)) + (((function(setX_I(i + 1)) - function(setX_I(i))) / del_x) * (del_x / 2));
     }
-    public static double integralSimpson(){
-        return ((b - a) / 6.0 ) * (function(a) + (4 * function((a + b) / 2.0)) + function(b));
+    public static double integralSimpson(int i){
+        return (del_x / 6.0) * (function(setX_I(i)) + (4.0 * (function(setX_I(i + 0.5)))) + (function(setX_I(i + 1))));
     }
     public static void main(String[] args){
-        double sumFirst = 0, sumSecond = 0, sumTrapezoid = 0, sumSpline = 0;
+        double sumFirst = 0, sumSecond = 0, sumTrapezoid = 0, sumSpline = 0, sumSimpson = 0;
         for (int i = 0; i < N; i++) {
             sumFirst = sumFirst + integralFirst(i);
             sumSecond = sumSecond + integralSecond(i);
             sumTrapezoid = sumTrapezoid + integralTrapezoid(i);
             sumSpline = sumSpline + integralSpline(i);
+            sumSimpson = sumSimpson + integralSimpson(i);
         }
+        System.out.println(exact());
+        System.out.println(sumSimpson);
         System.out.println(
                 "Error of left rectangle's method: \t" + Math.abs(exact() - sumFirst) +
-                "\nError of right rectangle's method: \t" + Math.abs(exact() - sumSecond) +
-                "\nError of trapezoid's method: \t\t" + Math.abs(exact() - sumTrapezoid) +
-                "\nError of spline's method: \t\t\t" + Math.abs(exact() - (sumSpline / N)) +
-                "\nError of simpson's method: \t\t\t" + Math.abs(exact() - integralSimpson()));
+                        "\nError of right rectangle's method: \t" + Math.abs(exact() - sumSecond) +
+                        "\nError of trapezoid's method: \t\t" + Math.abs(exact() - sumTrapezoid) +
+                        "\nError of spline's method: \t\t\t" + Math.abs(exact() - (sumSpline / N)) +
+                        "\nError of simpson's method: \t\t\t" + Math.abs(exact() -sumSimpson));
     }
 }
